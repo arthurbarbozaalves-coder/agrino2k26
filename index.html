@@ -1,1 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Agrinho 2026 - Paraná</title>
+    <style>
+        /* Estilos Globais e Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8faf8;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Barra de Navegação */
+        nav {
+            background-color: #1b4d22;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav .logo {
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav ul li a {
+            color: #e0f2e9;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #48c774;
+        }
+
+        /* Banner Principal com Imagem de Fundo */
+        .hero {
+            background: linear-gradient(rgba(27, 77, 34, 0.7), rgba(27, 77, 34, 0.7)), 
+                        url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 6rem 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* Container de Conteúdo */
+        .container {
+            max-width: 1100px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Seção Sobre o Tema */
+        .sobre-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+            align-items: center;
+            margin-bottom: 4rem;
+        }
+
+        .sobre-texto h2 {
+            color: #1b4d22;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .sobre-texto p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .sobre-imagem img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Destaque do Tema Central */
+        .tema-central {
+            background-color: #eef7f2;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            border: 2px dashed #3a8e4a;
+        }
+
+        .tema-central h3 {
+            color: #1b4d22;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .tema-central p {
+            font-size: 1.6rem;
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        /* Grid de Cards dos Pilares */
+        .secao-titulo {
+            text-align: center;
+            color: #1b4d22;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .pilares-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .pilar-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .pilar-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .pilar-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .pilar-conteudo {
+            padding: 1.5rem;
+        }
+
+        .pilar-conteudo h4 {
+            color: #3a8e4a;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+        }
+
+        /* Ajustes para Celular */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .sobre-container {
+                grid-template-columns: 1fr;
+            }
+            .tema-central p {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Agrinho Paraná 2026</div>
+        <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#sobre">O Projeto</a></li>
+            <li><a href="#pilares">Pilares</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero" id="inicio">
+        <h1>Concurso Agrinho 2026</h1>
+        <p>Construindo pontes entre a inovação no campo e a preservação do nosso planeta.</p>
+    </header>
+
+    <main class="container">
+
+        <section class="tema-central">
+            <h3>Tema Oficial</h3>
+            <p>"Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente"</p>
+        </section>
+        
+        <section class="sobre-container" id="sobre">
+            <div class="sobre-texto">
+                <h2>Equilíbrio é a Palavra-Chave</h2>
+                <p>O grande desafio do nosso século é garantir a segurança alimentar do planeta ao mesmo tempo em que protegemos nossos ecossistemas. O Paraná se destaca por unir cooperativismo, tecnologia de ponta e respeito à terra.</p>
+                <p>Este site foi desenvolvido para mostrar como pequenas ações na escola, robótica no campo e novas ideias de manejo podem transformar nossa realidade.</p>
+            </div>
+            <div class="sobre-imagem">
+                <img src="https://images.unsplash.com/photo-1560493450-b15b3c348521?auto=format&fit=crop&w=600&q=80" alt="Plantação e Tecnologia">
+            </div>
+        </section>
+
+        <section id="pilares">
+            <h2 class="secao-titulo">Os Três Pilares do Tema</h2>
+            
+            <div class="pilares-grid">
+                
+                <div class="pilar-card">
+                    <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=400&q=80" alt="Agro Forte">
+                    <div class="pilar-conteudo">
+                        <h4>🌱 Agro Forte</h4>
+                        <p>O uso da tecnologia, automação e técnicas modernas que aumentam a eficiência e garantem a força da produção agrícola paranaense.</p>
+                    </div>
+                </div>
+
+                <div class="pilar-card">
+                    <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=400&q=80" alt="Meio Ambiente">
+                    <div class="pilar-conteudo">
+                        <h4>🔄 Equilíbrio Real</h4>
+                        <p>A prova viva de que a economia e a ecologia podem andar juntas através de práticas inteligentes, rotação de culturas e uso consciente da água.</p>
+                    </div>
+                </div>
+
+                <div class="pilar-card">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=400&q=80" alt="Futuro Sustentável">
+                    <div class="pilar-conteudo">
+                        <h4>🌍 Futuro Sustentável</h4>
+                        <p>Educar as novas gerações para que os recursos naturais de hoje continuem disponíveis e saudáveis para o amanhã.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Desenvolvido para o Programa Agrinho Paraná estudante: Arthur| Educação e Cidadania</p>
+    </footer>
+
+</body>
+</html>
 
